@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th> ID </th>
+            <th> NAME </th>
+            <th>MOBILE NO. </th>
+
+        </tr>
+        <tr>
+            <td>
+
+                <%if(locals.table){%>
+                    <% table.forEach((item)=>{ %>
+        <tr>
+            <td>
+                <%= item.id %>
+            </td>
+            <td>
+                <%=item.name%>
+            </td>
+            <td>
+                <%=item.mob%>
+            </td>
+        </tr>
+        <% }) %>
+            <%}%>
+                </td>
+                </tr>
+    </table>
+
+    <div>
+        <h1> INSERT THE DATA </h1>
+        <br>
+        <form action="/insert" method="post">
+            <label for="name">ENTER NAME : </label>
+            <input type="text" name="name" id="">
+            <br>
+            <label for="number"> ENTER PHONE NUMBER : </label>
+            <input type="number" name="number" id="">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
