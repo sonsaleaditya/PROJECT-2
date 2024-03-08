@@ -4,12 +4,12 @@ app.use(express.joson());
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000
+const port = process.env.PORT;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:false}));
 db.connect();
 
-
+//helllo
 app.get('/',(req,res)=>{
     const q = "select * from students"
     db.query(q,(err,result)=>{
